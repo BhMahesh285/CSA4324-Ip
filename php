@@ -57,18 +57,18 @@
 <!-- Registration Form -->
 <div class="container" id="registration">
     <h2>Registration Form</h2>
-    <form id="registrationForm">
+    <form action="#" method="post" onsubmit="document.getElementById('login').style.display = 'block'; document.getElementById('registration').style.display = 'none'; return false;">
         <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" value="mahesh" required><br>
+        <input type="text" id="username" name="username" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" required><br>
         
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" value="5551" required><br>
+        <input type="password" id="password" name="password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>" required><br>
         
         <label for="confirm_password">Confirm Password:</label><br>
-        <input type="password" id="confirm_password" name="confirm_password" value="5551" required><br>
+        <input type="password" id="confirm_password" name="confirm_password" value="<?php echo isset($_POST['confirm_password']) ? $_POST['confirm_password'] : ''; ?>" required><br>
         
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" value="bhmahesh000@gmail.com" required><br>
+        <input type="email" id="email" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>" required><br>
         
         <input type="submit" value="Register">
     </form>
@@ -77,12 +77,12 @@
 <!-- Login Form -->
 <div class="container" id="login" style="display: none;">
     <h2>Login Form</h2>
-    <form id="loginForm">
+    <form action="#" method="post" onsubmit="document.getElementById('architecture').style.display = 'block'; document.getElementById('login').style.display = 'none'; return false;">
         <label for="login_username">Username:</label><br>
-        <input type="text" id="login_username" name="login_username" value="mahesh" required><br>
+        <input type="text" id="login_username" name="login_username" value="<?php echo isset($_POST['login_username']) ? $_POST['login_username'] : ''; ?>" required><br>
         
         <label for="login_password">Password:</label><br>
-        <input type="password" id="login_password" name="login_password" value="5551" required><br>
+        <input type="password" id="login_password" name="login_password" value="<?php echo isset($_POST['login_password']) ? $_POST['login_password'] : ''; ?>" required><br>
         
         <input type="submit" value="Login">
     </form>
@@ -104,20 +104,6 @@
     <p>Total Buildings: 463</p>
     <!-- Add architectural diagram or description here if available -->
 </div>
-
-<script>
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        document.getElementById('login').style.display = 'block';
-        document.getElementById('registration').style.display = 'none';
-    });
-
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        document.getElementById('architecture').style.display = 'block';
-        document.getElementById('login').style.display = 'none';
-    });
-</script>
 
 </body>
 </html>
